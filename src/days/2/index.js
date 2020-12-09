@@ -1016,3 +1016,5 @@ const part2 = list.reduce((num, i) => {
 }, 0);
 
 console.log('Part 2', part2);
+
+export { part1, part2 };

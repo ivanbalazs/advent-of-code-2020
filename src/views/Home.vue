@@ -1,18 +1,18 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div id="nav">
+        <p v-for="day in 24" :key="`page${day}`">
+            <router-link v-if="hasDay(day)" :to="{ name: 'result', params: { day } }">Day {{ day }}</router-link>
+            <span v-else>Day {{ day }}</span>
+        </p>
+    </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
-  name: 'Home',
-  components: {
-    HelloWorld
-  }
+    methods: {
+        hasDay(day) {
+            return this.existingPages.includes(day);
+        },
+    },
 }
 </script>

@@ -199,9 +199,13 @@ const list = `1945
 1809
 1812`.split("\n").map(i => +i);
 
+let part1;
+let part2;
+
 // Part 1
 for (let i = 1; i < 2020; i++) {
     if (list.includes(i) && list.includes(2020 - i)) {
+        part1 = i * (2020 - i);
         console.log('Part 1', i * (2020 - i));
     }
 }
@@ -212,8 +216,11 @@ for (let i = 0; i < len; i++) {
     for (let j = i+1; j < len; j++) {
         for (let k = j+1; k < len; k++) {
             if (list[i] + list[j] + list[k] === 2020) {
-                console.log('Part 2', list[i] * list[j] * list[k]);
+                part2 = list[i] * list[j] * list[k];
+                console.log('Part 2', );
             }
         }
     }
 }
+
+export { part1, part2 };

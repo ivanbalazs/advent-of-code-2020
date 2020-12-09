@@ -1,12 +1,3 @@
-<template>
-    <div>
-        <h1>Day 3</h1>
-        <div>Part one: {{ part1 }}</div>
-        <div>Part two: {{ part2 }}</div>
-    </div>
-</template>
-
-<script>
 //import _input from './input_test';
 import _input from './input';
 
@@ -23,9 +14,9 @@ const compute = ({ right, down }) => {
     return hits;
 }
 
-const part1 = compute.bind(null, { right: 3, down: 1 });
-const part2 = () => {
-    return [
+const part1 = compute({ right: 3, down: 1 });
+
+const part2 = [
         { right: 1, down: 1 },
         { right: 3, down: 1 },
         { right: 5, down: 1 },
@@ -36,15 +27,5 @@ const part2 = () => {
         console.log(slope, x, aggr * x);
         return aggr * x;
     }, 1);
-};
 
-export default {
-    computed: {
-        part1,
-        part2,
-    },
-    created() {
-        console.clear();
-    },
-};
-</script>
+export { part1, part2 };
